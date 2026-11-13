@@ -15,3 +15,9 @@ def frequency_table(df):
         justify='center'
     )
     return table_html
+
+def high_value_cars(df):
+    return df[df['selling_price'] > 5000].to_html(classes="table table-bordered table-striped table-sm", index=False)
+
+def total_price_by_manufacturer(df):
+    return df.groupby(['manufacturer', 'transmission'])[['selling_price']].sum().to_html(classes="table table-bordered table-striped table-sm")
