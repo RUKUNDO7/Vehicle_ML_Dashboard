@@ -13,9 +13,6 @@
             overflow-y: scroll;
             position: relative;
         }
-        .nav-pills .nav-link.active {
-            background-color: #0d6efd;
-        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#dashboard-nav" data-bs-offset="100" tabindex="0">
@@ -25,9 +22,15 @@
             <!-- Sidebar Navigation -->
             <div class="col-md-3">
                 <div id="dashboard-nav" class="list-group position-sticky top-0">
-                    <a class="list-group-item list-group-item-action" href="#frequency-table">
+                    <a class="list-group-item list-group-item-action bg-primary text-white" href="#frequency-table">
                         Frequency Tables (One-way)
                     </a>
+                    <a class="list-group-item list-group-item-action bg-primary text-white" href="#high-value-cars">
+                        Cars Bought Above 5000
+                    </a>
+                    <a class="list-group-item list-group-item-action bg-primary text-white" href="#total-price">
+    Total Price by Manufacturer
+</a>
                 </div>
             </div>
 
@@ -46,6 +49,25 @@
                             {{ frequency_table|safe }}
                         </div>
                     </div>
+
+                    <div id="high-value-cars" class="card shadow mb-5">
+                        <div class="card-header bg-info text-white">
+                            Cars Bought Above 5000
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                {{ high_value_cars|safe }}
+                            </div>
+                        </div>
+                    </div>
+                    <div id="total-price" class="card shadow mb-5">
+    <div class="card-header bg-info text-white">
+        Total Price by Manufacturer
+    </div>
+    <div class="card-body">
+        {{ total_price|safe }}
+    </div>
+</div>
 
                 </div>
             </div>
